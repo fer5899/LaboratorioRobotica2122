@@ -3,12 +3,7 @@
  * Include Files
  *
  */
-#if defined(MATLAB_MEX_FILE)
-#include "tmwtypes.h"
-#include "simstruc_types.h"
-#else
-#include "rtwtypes.h"
-#endif
+#include "simstruc.h"
 
 
 
@@ -196,7 +191,8 @@ void EncoderWilly_Outputs_wrapper(int16_T *pos,
 			const uint8_T *pinA0, const int_T p_width0,
 			const uint8_T *pinB0, const int_T p_width1,
 			const real_T *pinA1, const int_T p_width2,
-			const real_T *pinB1, const int_T p_width3)
+			const real_T *pinB1, const int_T p_width3,
+			SimStruct *S)
 {
 /* %%%-SFUNWIZ_wrapper_Outputs_Changes_BEGIN --- EDIT HERE TO _END */
 /* wait until after initialization is done */
@@ -224,7 +220,8 @@ void EncoderWilly_Update_wrapper(int16_T *pos,
 			const uint8_T *pinA0, const int_T p_width0,
 			const uint8_T *pinB0, const int_T p_width1,
 			const real_T *pinA1, const int_T p_width2,
-			const real_T *pinB1, const int_T p_width3)
+			const real_T *pinB1, const int_T p_width3,
+			SimStruct *S)
 {
 /* %%%-SFUNWIZ_wrapper_Update_Changes_BEGIN --- EDIT HERE TO _END */
 if (xD[0]!=1) {

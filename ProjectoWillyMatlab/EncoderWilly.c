@@ -26,7 +26,7 @@
  * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
  *  -------------------------------------------------------------------------
  *
- * Created: Fri Nov 12 18:01:20 2021
+ * Created: Fri Nov 19 17:46:30 2021
  */
 
 #define S_FUNCTION_LEVEL               2
@@ -74,15 +74,15 @@
 #define PARAMETER_3_NAME               pinB1
 #define PARAMETER_3_DTYPE              real_T
 #define PARAMETER_3_COMPLEX            COMPLEX_NO
-#define SAMPLE_TIME_0                  INHERITED_SAMPLE_TIME
+#define SAMPLE_TIME_0                  0.01
 #define NUM_DISC_STATES                1
 #define DISC_STATES_IC                 [0]
 #define NUM_CONT_STATES                0
 #define CONT_STATES_IC                 [0]
-#define SFUNWIZ_GENERATE_TLC           1
+#define SFUNWIZ_GENERATE_TLC           0
 #define SOURCEFILES                    "__SFB__"
 #define PANELINDEX                     N/A
-#define USE_SIMSTRUCT                  0
+#define USE_SIMSTRUCT                  1
 #define SHOW_COMPILE_STEPS             0
 #define CREATE_DEBUG_MEXFILE           0
 #define SAVE_CODE_ONLY                 1
@@ -105,13 +105,15 @@ extern void EncoderWilly_Outputs_wrapper(int16_T *pos,
   const uint8_T *pinA0, const int_T p_width0,
   const uint8_T *pinB0, const int_T p_width1,
   const real_T *pinA1, const int_T p_width2,
-  const real_T *pinB1, const int_T p_width3);
+  const real_T *pinB1, const int_T p_width3,
+  SimStruct *S);
 extern void EncoderWilly_Update_wrapper(int16_T *pos,
   real_T *xD,
   const uint8_T *pinA0, const int_T p_width0,
   const uint8_T *pinB0, const int_T p_width1,
   const real_T *pinA1, const int_T p_width2,
-  const real_T *pinB1, const int_T p_width3);
+  const real_T *pinB1, const int_T p_width3,
+  SimStruct *S);
 
 /*====================*
  * S-function methods *
@@ -229,7 +231,6 @@ static void mdlInitializeSizes(SimStruct *S)
 
   /* Take care when specifying exception free code - see sfuntmpl_doc.c */
   ssSetOptions(S, (SS_OPTION_EXCEPTION_FREE_CODE |
-                   SS_OPTION_USE_TLC_WITH_ACCELERATOR |
                    SS_OPTION_WORKS_WITH_CODE_REUSE));
 }
 
@@ -277,9 +278,6 @@ static void mdlSetDefaultPortDataTypes(SimStruct *S)
 
 static void mdlSetWorkWidths(SimStruct *S)
 {
-  const char_T *rtParamNames[] = { "P1", "P2", "P3", "P4" };
-
-  ssRegAllTunableParamsAsRunTimeParams(S, rtParamNames);
 }
 
 #endif
@@ -315,7 +313,7 @@ static void mdlOutputs(SimStruct *S, int_T tid)
   const real_T *pinA1 = (const real_T *) mxGetData(PARAM_DEF2(S));
   const real_T *pinB1 = (const real_T *) mxGetData(PARAM_DEF3(S));
   EncoderWilly_Outputs_wrapper(pos, xD, pinA0, p_width0, pinB0, p_width1, pinA1,
-    p_width2, pinB1, p_width3);
+    p_width2, pinB1, p_width3, S);
 }
 
 #define MDL_UPDATE                                               /* Change to #undef to remove function */
@@ -341,7 +339,7 @@ static void mdlUpdate(SimStruct *S, int_T tid)
   const real_T *pinA1 = (const real_T *) mxGetData(PARAM_DEF2(S));
   const real_T *pinB1 = (const real_T *) mxGetData(PARAM_DEF3(S));
   EncoderWilly_Update_wrapper(pos, xD, pinA0, p_width0, pinB0, p_width1, pinA1,
-    p_width2, pinB1, p_width3);
+    p_width2, pinB1, p_width3, S);
 }
 
 #endif                                 /* MDL_UPDATE */
