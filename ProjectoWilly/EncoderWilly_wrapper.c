@@ -12,7 +12,7 @@
 
 # include <Arduino.h>
 
-typedef struct { int pinA; int pinB; int pos; int del;} Encoder;    
+typedef struct { int pinA; int pinB; long pos; int del;} Encoder;    
 volatile Encoder Enc[2]  = {{0,0,0,0}, {0,0,0,0}};
 
 int getIntNum(int pin) {
@@ -186,7 +186,7 @@ void isrPinBEn1(){
  * Output function
  *
  */
-void EncoderWilly_Outputs_wrapper(int16_T *pos,
+void EncoderWilly_Outputs_wrapper(int32_T *pos,
 			const real_T *xD,
 			const uint8_T *pinA0, const int_T p_width0,
 			const uint8_T *pinB0, const int_T p_width1,
@@ -215,7 +215,7 @@ if (xD[0]==1) {
  * Updates function
  *
  */
-void EncoderWilly_Update_wrapper(int16_T *pos,
+void EncoderWilly_Update_wrapper(int32_T *pos,
 			real_T *xD,
 			const uint8_T *pinA0, const int_T p_width0,
 			const uint8_T *pinB0, const int_T p_width1,

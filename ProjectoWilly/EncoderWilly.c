@@ -26,7 +26,7 @@
  * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
  *  -------------------------------------------------------------------------
  *
- * Created: Fri Nov 19 17:46:30 2021
+ * Created: Fri Dec 03 17:26:38 2021
  */
 
 #define S_FUNCTION_LEVEL               2
@@ -41,7 +41,7 @@
 #define OUT_PORT_0_NAME                pos
 #define OUTPUT_0_WIDTH                 1
 #define OUTPUT_DIMS_0_COL              2
-#define OUTPUT_0_DTYPE                 int16_T
+#define OUTPUT_0_DTYPE                 int32_T
 #define OUTPUT_0_COMPLEX               COMPLEX_NO
 #define OUT_0_FRAME_BASED              FRAME_NO
 #define OUT_0_BUS_BASED                0
@@ -100,14 +100,14 @@
 #define IS_PARAM_UINT8(pVal)           (mxIsNumeric(pVal) && !mxIsLogical(pVal) &&\
 !mxIsEmpty(pVal) && !mxIsSparse(pVal) && !mxIsComplex(pVal) && mxIsUint8(pVal))
 
-extern void EncoderWilly_Outputs_wrapper(int16_T *pos,
+extern void EncoderWilly_Outputs_wrapper(int32_T *pos,
   const real_T *xD,
   const uint8_T *pinA0, const int_T p_width0,
   const uint8_T *pinB0, const int_T p_width1,
   const real_T *pinA1, const int_T p_width2,
   const real_T *pinB1, const int_T p_width3,
   SimStruct *S);
-extern void EncoderWilly_Update_wrapper(int16_T *pos,
+extern void EncoderWilly_Update_wrapper(int32_T *pos,
   real_T *xD,
   const uint8_T *pinA0, const int_T p_width0,
   const uint8_T *pinB0, const int_T p_width1,
@@ -219,7 +219,7 @@ static void mdlInitializeSizes(SimStruct *S)
   ssSetOutputPortDimensionInfo(S, 0, &outputDimsInfo);
   ssSetOutputPortMatrixDimensions(S, 0, OUTPUT_0_WIDTH, OUTPUT_DIMS_0_COL);
   ssSetOutputPortFrameData(S, 0, OUT_0_FRAME_BASED);
-  ssSetOutputPortDataType(S, 0, SS_INT16);
+  ssSetOutputPortDataType(S, 0, SS_INT32);
   ssSetOutputPortComplexSignal(S, 0, OUTPUT_0_COMPLEX);
   ssSetNumPWork(S, 0);
   ssSetNumSampleTimes(S, 1);
@@ -302,7 +302,7 @@ static void mdlStart(SimStruct *S)
  */
 static void mdlOutputs(SimStruct *S, int_T tid)
 {
-  int16_T *pos = (int16_T *) ssGetOutputPortRealSignal(S, 0);
+  int32_T *pos = (int32_T *) ssGetOutputPortRealSignal(S, 0);
   const real_T *xD = ssGetDiscStates(S);
   const int_T p_width0 = mxGetNumberOfElements(PARAM_DEF0(S));
   const int_T p_width1 = mxGetNumberOfElements(PARAM_DEF1(S));
@@ -328,7 +328,7 @@ static void mdlOutputs(SimStruct *S, int_T tid)
  */
 static void mdlUpdate(SimStruct *S, int_T tid)
 {
-  int16_T *pos = (int16_T *) ssGetOutputPortRealSignal(S, 0);
+  int32_T *pos = (int32_T *) ssGetOutputPortRealSignal(S, 0);
   real_T *xD = ssGetDiscStates(S);
   const int_T p_width0 = mxGetNumberOfElements(PARAM_DEF0(S));
   const int_T p_width1 = mxGetNumberOfElements(PARAM_DEF1(S));
