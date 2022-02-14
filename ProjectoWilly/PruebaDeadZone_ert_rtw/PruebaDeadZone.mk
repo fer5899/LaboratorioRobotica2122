@@ -2,7 +2,7 @@
 ## Makefile generated for component 'PruebaDeadZone'. 
 ## 
 ## Makefile     : PruebaDeadZone.mk
-## Generated on : Fri Nov 26 17:31:41 2021
+## Generated on : Mon Feb 14 02:19:15 2022
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/PruebaDeadZone.elf
 ## Product type : executable
 ## 
@@ -215,7 +215,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/MW_PWM.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/MW_PWMDriver.c C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/ArduinoPinHandleMap.cpp xcp_ext_mode.c $(START_DIR)/PruebaDeadZone_ert_rtw/PruebaDeadZone.c $(START_DIR)/PruebaDeadZone_ert_rtw/PruebaDeadZone_data.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_common.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_classic_trigger.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_standard.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_daq.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_calibration.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_fifo.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_transport.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/platform/default/xcp_mem_default.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/platform/default/xcp_drv_rtiostream.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_frame_serial.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_param_default_serial.c C:/Users/yo/MATLAB/Projects/Willy/EncoderWilly_wrapper.c C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../src/MW_ArduinoHWInit.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../scheduler/src/arduinoAVRScheduler.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../src/rtiostream_serial_daemon.cpp
+SRCS = C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/MW_PWM.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/MW_PWMDriver.c C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/ArduinoPinHandleMap.cpp xcp_ext_mode.c $(START_DIR)/PruebaDeadZone_ert_rtw/PruebaDeadZone.c $(START_DIR)/PruebaDeadZone_ert_rtw/PruebaDeadZone_data.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_common.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_classic_trigger.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_standard.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_daq.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_calibration.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_fifo.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_transport.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/platform/default/xcp_mem_default.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/platform/default/xcp_drv_rtiostream.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_frame_serial.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_param_default_serial.c $(START_DIR)/EncoderWilly_wrapper.c C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../src/MW_ArduinoHWInit.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../scheduler/src/arduinoAVRScheduler.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../src/rtiostream_serial_daemon.cpp
 
 MAIN_SRC = $(START_DIR)/PruebaDeadZone_ert_rtw/ert_main.c
 
@@ -420,19 +420,19 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(LIBS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : C:/Users/yo/MATLAB/Projects/Willy/%.c
+%.o : C:/Users/Mauri/Documents/GitHub/LaboratorioRobotica2122/ProjectoWilly/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.S.o : C:/Users/yo/MATLAB/Projects/Willy/%.s
+%.S.o : C:/Users/Mauri/Documents/GitHub/LaboratorioRobotica2122/ProjectoWilly/%.s
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.S.o : C:/Users/yo/MATLAB/Projects/Willy/%.S
+%.S.o : C:/Users/Mauri/Documents/GitHub/LaboratorioRobotica2122/ProjectoWilly/%.S
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.o : C:/Users/yo/MATLAB/Projects/Willy/%.cpp
+%.o : C:/Users/Mauri/Documents/GitHub/LaboratorioRobotica2122/ProjectoWilly/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
@@ -652,7 +652,7 @@ xcp_ext_param_default_serial.o : $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-EncoderWilly_wrapper.o : C:/Users/yo/MATLAB/Projects/Willy/EncoderWilly_wrapper.c
+EncoderWilly_wrapper.o : $(START_DIR)/EncoderWilly_wrapper.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
