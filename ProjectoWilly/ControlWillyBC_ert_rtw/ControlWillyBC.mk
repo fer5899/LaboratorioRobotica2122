@@ -2,7 +2,7 @@
 ## Makefile generated for component 'ControlWillyBC'. 
 ## 
 ## Makefile     : ControlWillyBC.mk
-## Generated on : Fri Dec 10 15:46:31 2021
+## Generated on : Mon Feb 14 17:14:33 2022
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/ControlWillyBC.elf
 ## Product type : executable
 ## 
@@ -21,7 +21,7 @@ MAKEFILE                  = ControlWillyBC.mk
 MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2021b
 MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2021b/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = C:/Users/Mauri/Documents/GitHub/LaboratorioRobotica2122/ProjectoWilly
+START_DIR                 = C:/Users/yo/Git/Willy_LabRob/ProjectoWilly
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -61,7 +61,7 @@ PRODUCT_BIN      = $(RELATIVE_PATH_TO_ANCHOR)/$(PRODUCT_NAME).eep
 ARDUINO_TOOLS    = $(ARDUINO_ROOT)/hardware/tools/avr/bin
 ELF2EEP_OPTIONS  = -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0
 DOWNLOAD_ARGS    =  >tmp.trash 2>&1 -P$(ARDUINO_PORT) -V -q -q -q -q -F -C$(ARDUINO_ROOT)/hardware/tools/avr/etc/avrdude.conf -p$(ARDUINO_MCU) -c$(ARDUINO_PROTOCOL) -b$(ARDUINO_BAUD) -D -Uflash:w:
-SLIB_PATH        = C:/Users/Mauri/DOCUME~1/MATLAB/R2021b/ARDUIN~1/ARDUIN~1/FASTER~1
+SLIB_PATH        = C:/Users/yo/DOCUME~1/MATLAB/R2021b/ARDUIN~1/ARDUIN~1/FASTER~1
 
 TOOLCHAIN_SRCS = 
 TOOLCHAIN_INCS = 
@@ -215,7 +215,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/MW_PWM.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/MW_PWMDriver.c C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/ArduinoPinHandleMap.cpp xcp_ext_mode.c $(START_DIR)/ControlWillyBC_ert_rtw/ControlWillyBC.c $(START_DIR)/ControlWillyBC_ert_rtw/ControlWillyBC_data.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_common.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_classic_trigger.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_standard.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_daq.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_calibration.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_fifo.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_transport.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/platform/default/xcp_mem_default.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/platform/default/xcp_drv_rtiostream.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_frame_serial.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_param_default_serial.c $(START_DIR)/EncoderWilly_wrapper.c C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../src/MW_ArduinoHWInit.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../scheduler/src/arduinoAVRScheduler.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../src/rtiostream_serial_daemon.cpp
+SRCS = C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/MW_PWM.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/MW_PWMDriver.c C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/ArduinoPinHandleMap.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/MW_AnalogInput.cpp xcp_ext_mode.c $(START_DIR)/ControlWillyBC_ert_rtw/ControlWillyBC.c $(START_DIR)/ControlWillyBC_ert_rtw/ControlWillyBC_data.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_common.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_classic_trigger.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_standard.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_daq.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/protocol/src/xcp_calibration.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_fifo.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_transport.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/platform/default/xcp_mem_default.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/platform/default/xcp_drv_rtiostream.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/slave/transport/src/xcp_frame_serial.c $(MATLAB_ROOT)/toolbox/coder/xcp/src/target/ext_mode/src/xcp_ext_param_default_serial.c $(START_DIR)/EncoderWilly_wrapper.c C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../src/MW_ArduinoHWInit.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../scheduler/src/arduinoAVRScheduler.cpp C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinotarget/registry/../src/rtiostream_serial_daemon.cpp
 
 MAIN_SRC = $(START_DIR)/ControlWillyBC_ert_rtw/ert_main.c
 
@@ -225,7 +225,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = MW_PWM.o MW_PWMDriver.o ArduinoPinHandleMap.o xcp_ext_mode.o ControlWillyBC.o ControlWillyBC_data.o xcp_ext_common.o xcp_ext_classic_trigger.o xcp.o xcp_standard.o xcp_daq.o xcp_calibration.o xcp_fifo.o xcp_transport.o xcp_mem_default.o xcp_drv_rtiostream.o xcp_frame_serial.o xcp_ext_param_default_serial.o EncoderWilly_wrapper.o MW_ArduinoHWInit.o io_wrappers.o arduinoAVRScheduler.o rtiostream_serial_daemon.o
+OBJS = MW_PWM.o MW_PWMDriver.o ArduinoPinHandleMap.o MW_AnalogInput.o xcp_ext_mode.o ControlWillyBC.o ControlWillyBC_data.o xcp_ext_common.o xcp_ext_classic_trigger.o xcp.o xcp_standard.o xcp_daq.o xcp_calibration.o xcp_fifo.o xcp_transport.o xcp_mem_default.o xcp_drv_rtiostream.o xcp_frame_serial.o xcp_ext_param_default_serial.o EncoderWilly_wrapper.o MW_ArduinoHWInit.o io_wrappers.o arduinoAVRScheduler.o rtiostream_serial_daemon.o
 
 MAIN_OBJ = ert_main.o
 
@@ -420,19 +420,19 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(LIBS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : C:/Users/yo/Git/Willy_LabRob/ProjectoWilly/%.c
+%.o : C:/Users/Mauri/Documents/GitHub/LaboratorioRobotica2122/ProjectoWilly/%.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-%.S.o : C:/Users/yo/Git/Willy_LabRob/ProjectoWilly/%.s
+%.S.o : C:/Users/Mauri/Documents/GitHub/LaboratorioRobotica2122/ProjectoWilly/%.s
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.S.o : C:/Users/yo/Git/Willy_LabRob/ProjectoWilly/%.S
+%.S.o : C:/Users/Mauri/Documents/GitHub/LaboratorioRobotica2122/ProjectoWilly/%.S
 	$(AS) $(ASFLAGS) -o "$@" "$<"
 
 
-%.o : C:/Users/yo/Git/Willy_LabRob/ProjectoWilly/%.cpp
+%.o : C:/Users/Mauri/Documents/GitHub/LaboratorioRobotica2122/ProjectoWilly/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
@@ -589,6 +589,10 @@ MW_PWMDriver.o : C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/sup
 
 
 ArduinoPinHandleMap.o : C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/ArduinoPinHandleMap.cpp
+	$(CPP) $(CPPFLAGS) -o "$@" "$<"
+
+
+MW_AnalogInput.o : C:/ProgramData/MATLAB/SupportPackages/R2021b/toolbox/target/supportpackages/arduinobase/src/MW_AnalogInput.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
